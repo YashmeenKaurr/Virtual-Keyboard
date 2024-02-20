@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bree+Serif&amp;family=Inconsolata:wght@900&amp;family=Kanit:wght@500&amp;family=Lilita+One&amp;family=Noto+Sans+TC:wght@100&amp;family=Playball&amp;family=Roboto+Mono:ital,wght@1,100&amp;family=Skranji&amp;family=Varela+Round&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&amp;family=Bree+Serif&amp;family=Inconsolata:wght@900&amp;family=Kanit:wght@500&amp;family=Lilita+One&amp;family=Noto+Sans+TC:wght@100&amp;family=Playball&amp;family=Roboto+Mono:ital,wght@1,100&amp;family=Skranji&amp;family=Varela+Round&amp;display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Inconsolata:wght@900&family=Kanit:wght@500&family=Lilita+One&family=Noto+Sans+TC:wght@100&family=Playball&family=Roboto+Mono:ital,wght@1,100&family=Rubik:wght@800&family=Skranji&family=Varela+Round&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" media="screen and (max-width: 1400px)" href="phone.css">
+    <title>VirtualKeyboard</title>
+    <link rel="icon" , type="image" ,
+        href="data:image/png;base64,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">
+    
+  
+  <script src="index.js"></script>
+  </head>
+  <body>
+    <!-- Nav Bar  -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Virtual Keyboard</a>
+        <div class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </div>
+      
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="introvk.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="Histry.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="tagsused.html">Information</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact Us</a>
+            </li>
+            
+            
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+          <div class="mx-2">
+            <button class="btn btn-primary" data-toggle="modal"
+            data-target="#loginModal">Login</button>
+            <button class="btn btn-primary" data-toggle="modal"
+            data-target="#signUpModal">SignUp</button>
+          </div>
+        </div>
+      </nav>
+
+      <!--Login Modal -->
+    <div
+    class="modal fade"
+    id="loginModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="loginModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="loginModalLabel">Login to iCoder</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"><form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form></div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Signup Modal -->
+  <div
+    class="modal fade"
+    id="signUpModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="signUpModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="signUpModalLabel">Get an iCoder Account</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body"><form>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Confirm Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">SignUp</button>
+        </form></div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-dismiss="modal"
+          >
+            Close
+          </button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div id="firstSection">
+        <div class="welcome">
+          <h1>Welcome to VirtualKeyboard!</h1>
+          <p>Welcome to our virtual keyboard – your gateway to effortless typing and seamless input. virtual keyboard supports multi-touch gestures.</p>
+          <div id="but">
+            <button type="button" class="btn btn-primary">TestNow</button>
+          </div>
+        </div>
+      </div>
+
+      
+      
+      <div class= "keyboardSection" id="apnaKeyboard">
+      <section class="virtualKeyboard my-4 ">
+        <div class="heading"><h2>Try Our Keyboard</h2></div>
+        <div id="textArea">
+          <textarea name="message" id="message" placeholder="ENTER THE REQUIRED TEXT" cols="100" rows="8"></textarea>
+        </div>
+        <script>
+          let playClickSound=new Audio('button-click(chosic.com).mp3')
+        </script>
+        <div class="allKey allKey-dark bg-dark">
+        <section class="keyboard">
+
+          <button class="key" id="k" onclick="append('`')">`</button>
+          <button class="key" onclick="append('1')">1</button>
+          <button class="key" onclick="append('2')">2</button>
+          <button class="key" onclick="append('3')">3</button>
+          <button class="key" onclick="append('4')">4</button>
+          <button class="key" onclick="append('5')">5</button>
+          <button class="key" onclick="append('6')">6</button>
+          <button class="key" onclick="append('7')">7</button>
+          <button class="key" onclick="append('8')">8</button>
+          <button class="key" onclick="append('9')">9</button>
+          <button class="key" onclick="append('10')">10</button>
+          <button class="key" onclick="append('=')">=</button>
+          <button class="key" id="backspace" onclick="backspace()">backspace</button>
+        </section>
+        <section class="keyboard">
+          <button class="key" id="tab" onclick="append('    ')">tab</button>
+          <button class="key" onclick="append('q')">q</button>
+          <button class="key" onclick="append('w')">w</button>
+          <button class="key" onclick="append('e')">e</button>
+          <button class="key" onclick="append('r')">r</button>
+          <button class="key" onclick="append('t')">t</button>
+          <button class="key" onclick="append('y')">y</button>
+          <button class="key" onclick="append('u')">u</button>
+          <button class="key" onclick="append('i')">i</button>
+          <button class="key" onclick="append('o')">o</button>
+          <button class="key" onclick="append('p')">p</button>
+          <button class="key" onclick="append('[')">[</button>
+          <button class="key" onclick="append(']')">]</button>
+          <button class="key" onclick="append('/')">/</button>
+        </section>
+        <section class="keyboard"> 
+          <button class="key" id="caps" onclick="handleCapsLock()">caps lock</button>
+          <button class="key" onclick="append('a')">a</button>
+          <button class="key" onclick="append('s')">s</button>
+          <button class="key" onclick="append('d')">d</button>
+          <button class="key" onclick="append('f')">f</button>
+          <button class="key" onclick="append('g')">g</button>
+          <button class="key" onclick="append('h')">h</button>
+          <button class="key" onclick="append('j')">j</button>
+          <button class="key" onclick="append('k')">k</button>
+          <button class="key" onclick="append('l')">l</button>
+          <button class="key" onclick="append(';')">;</button>
+          <button class="key" onclick="append('<')">'</button>
+          <button class="key" id="enter" onclick="handleEnter()">enter</button>
+        </section>
+        <section class="keyboard">
+          <button class="key" id="shift">shift</button>
+          <button class="key" onclick="append('z')">z</button>
+          <button class="key" onclick="append('x')">x</button>
+          <button class="key" onclick="append('c')">c</button>
+          <button class="key" onclick="append('v')">v</button>
+          <button class="key" onclick="append('b')">b</button>
+          <button class="key" onclick="append('n')">n</button>
+          <button class="key" onclick="append('m')">m</button>
+          <button class="key" onclick="append(',')">,</button>
+          <button class="key" onclick="append(',')">.</button>
+          <button class="key" onclick="append('/')">/</button>
+          <button class="key" onclick="append(',')" id="shift" >shift</button>        
+        </section>
+        <section class="keyboard" id="bottomRow"> 
+         <button class="key" onclick="append('ctrl')">ctrl</button>
+         <button class="key" onclick="append('fn')">fn</button>
+         <button class="key" onclick="append('win')">win</button>
+         <button class="key" onclick="append('alt')">alt</button>        
+         <button class="key" id="space" onclick="handleSpacebar()"></button>
+         <button class="key" onclick="append('alt')">alt</button>    
+         <button class="key" onclick="append('ctrl')">ctrl</button>
+         <button class="key" onclick="append('<')"><</button>         
+         <button class="key" onclick="append('^')">^</button>
+         <button class="key" onclick="append('>')">></button> 
+          
+        </section>   
+        </div>     
+        </section>  
+        </div>
+        <div class="container -4">
+      <div class="row mb-2">
+    <div class="col-md-6">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-danger">Security</strong>
+              <h3 class="mb-0">Security Concerns</h3>
+              <div class="mb-1 text-muted">Nov 12</div>
+              <p class="card-text mb-auto">
+                Vulnerability to keyloggers, touchscreen pattern analysis; virtual keyboards may pose security risks compared to physical counterparts.
+              </p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="card1.jpeg"
+                width="200px"
+                height="250px"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-success">Support</strong>
+              <h3 class="mb-0">Multilingual Support</h3>
+              <div class="mb-1 text-muted">Nov 11</div>
+              <p class="mb-auto">
+                Accommodates various languages, characters; a crucial feature for global users, supporting linguistic diversity and communication needs.
+              </p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="card2.jpeg"
+                width="200px"
+                height="250px"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container my-4">
+      <div class="row mb-2">
+        <div class="col-md-6">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-primary">Integeration</strong>
+              <h3 class="mb-0">Integration in Devices</h3>
+              <div class="mb-1 text-muted">Nov 12</div>
+              <p class="card-text mb-auto">
+                Embedded in smartphones, tablets, ATMs; seamless integration into diverse technologies, enhancing user interactions and data input.
+              </p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="card3.jpeg"
+                width="200px"
+                height="250px"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div
+            class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+          >
+            <div class="col p-4 d-flex flex-column position-static">
+              <strong class="d-inline-block mb-2 text-warning">UseIN</strong>
+              <h3 class="mb-0">Use in industries</h3>
+              <div class="mb-1 text-muted">Nov 11</div>
+              <p class="mb-auto">
+                Healthcare, aviation, gaming; explores how virtual keyboards are tailored for specific industries, meeting unique requirements and standards.
+              </p>
+              <a href="#" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+              <img
+                src="card1.jpeg"
+                width="200px"
+                height="250px"
+                alt=""
+              />
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <!-- Footer --> 
+      <div class="foot foot-dark bg-dark"></div>
+      <footer class="containers containers-dark bg-dark">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>
+          © 2023-2024 iCoder, Inc. - <a href="#">Privacy</a> ·
+          <a href="#">Terms</a>
+        </p>
+      </footer>  
+    </div> 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+  </body>
+  
+</html>
